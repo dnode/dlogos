@@ -8,7 +8,7 @@
   {
     "source": "...",
     "destinations": [
-      { "path": "...", "width": ... }
+      { "path": "...", "width": "..." }
     ]
   }
 ]
