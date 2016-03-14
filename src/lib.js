@@ -2,16 +2,20 @@
 
 const mkdirp = require('mkdirp');
 const imagemagick = require('imagemagick');
-const path = require('path');
+const dirname = require('path').dirname;
 
 module.exports = (configs, callback) => {
   for (let config of configs) {
     for (let destination of config.destinations) {
-      mkdirp.sync(path.dirname(destination.path));
+      let path = destination.path;
+      if (config.path) {
+        path = config.path + '/' + destination.path;
+      }
+      mkdirp.sync(dirname(path));
       imagemagick.resize(
           {
             srcPath: config.source,
-            dstPath: destination.path,
+            dstPath: path,
             width: destination.width || destination.height,
             height: destination.height || destination.width
           },
