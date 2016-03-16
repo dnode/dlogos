@@ -1,6 +1,6 @@
 {
   "name": "dlogos",
-  "description": "Resize logos into different formats and sizes",
+  "description": "Resize logos into different formats and sizes defined in the 'dlogos.json'",
   "version": "1.1.0",
   "homepage": "http://github.com/dnode/dlogos",
   "license": "MIT",
