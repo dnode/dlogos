@@ -1,8 +1,8 @@
 'use strict';
 
+const dirname = require('path').dirname;
 const mkdirp = require('mkdirp');
 const imagemagick = require('imagemagick');
-const dirname = require('path').dirname;
 
 module.exports = (configs, callback) => {
   for (let config of configs) {
