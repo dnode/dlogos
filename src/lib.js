@@ -9,7 +9,7 @@ module.exports = (configs, callback) => {
     for (let destination of config.destinations) {
       let path = destination.path;
       if (config.path) {
-        path = config.path + '/' + destination.path;
+        path = config.path + '/' + path;
       }
       mkdirp.sync(dirname(path));
       imagemagick.resize(
