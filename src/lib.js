@@ -4,7 +4,7 @@ const dirname = require('path').dirname;
 const mkdirp = require('mkdirp');
 const imagemagick = require('imagemagick');
 
-module.exports = (configs, callback) => {
+module.exports = (configs) => {
   for (let config of configs) {
     for (let destination of config.destinations) {
       let path = destination.path;
@@ -19,7 +19,7 @@ module.exports = (configs, callback) => {
             width: destination.width || destination.height,
             height: destination.height || destination.width
           },
-          callback || ((err) => { if (err) { console.log(err); } })
+          (err) => { if (err) { console.log(err); } }
       );
     }
   }
