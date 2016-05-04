@@ -5,8 +5,8 @@ const mkdirp = require('mkdirp');
 const imagemagick = require('imagemagick');
 
 module.exports = (configs) => {
-  for (let config of configs) {
-    for (let destination of config.destinations) {
+  for (const config of configs) {
+    for (const destination of config.destinations) {
       let path = destination.path;
       if (config.path) {
         path = config.path + '/' + path;
